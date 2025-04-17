@@ -6,6 +6,5 @@ if edad >= 18:
 else:
     print("Eres menor de edad")
     print("¡Pero no te preocupes!")
-    print("La vida es bella a cualquier edad")
-    print("Disfruta tu juventud y sigue aprendiendo")
-    print("🌟 ¡El futuro es brillante! 🌟")
+
+
