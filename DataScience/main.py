@@ -57,9 +57,12 @@
 
 
 #Central Park Squirrel Data Analysis
-import pandas
+import os
+import pandas as pd
 
-data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+script_dir = os.path.dirname(__file__)
+file_path = os.path.join(script_dir, "2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+data = pd.read_csv(file_path)
 grey_squirrels_count = len(data[data["Primary Fur Color"] == "Gray"])
 red_squirrels_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
 black_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
@@ -72,7 +75,7 @@ data_dict = {
     "Count": [grey_squirrels_count, red_squirrels_count, black_squirrels_count]
 }
 
-df = pandas.DataFrame(data_dict)
+df = pd.DataFrame(data_dict)
 df.to_csv("squirrel_count.csv")
 
 
